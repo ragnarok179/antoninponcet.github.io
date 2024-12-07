@@ -1,0 +1,1469 @@
+* {box-sizing: border-box}
+
+html, body {
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  overscroll-behavior-x: none;
+}
+
+.window {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  cursor:default;
+}
+
+.window:active {
+  cursor:grabbing;
+}
+
+.world {
+    position: relative;
+    width: 12000px;
+    height: 18000px;
+    background: black;
+}
+
+
+
+.item {
+  position:absolute;
+}
+
+#cursorImage {
+    position: absolute;
+    pointer-events: none;
+    width: 10vw;
+    height: 10vh;
+    background-image: url(../images/cursor.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#cursorPointer {
+    position: absolute;
+    pointer-events: none;
+    width: 10vw;
+    height: 10vh;
+    background-image: url(../images/cursorPointer.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    visibility: hidden;
+    z-index: 1001;
+}
+
+#Vindex {
+    position: absolute;
+    top: 000px;
+    left: 25px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+
+#indexBlack {
+    font-family: Space Mono;
+    left: 50px;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+#index0 {
+    font-family: Space Mono;
+    font-size: 15px;
+    top: 25%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+.scale-loop {
+    position: absolute;
+    display: inline-block;
+    line-height: 1.5;
+    transition: transform 0.5s ease-in-out;
+    animation: scaleAnimation 2s infinite; /* Boucle toutes les 2 secondes */
+}
+
+@keyframes scaleAnimation {
+    0%, 100% {
+        transform: scale(1); /* Taille initiale */
+    }
+
+    50% {
+        transform: scale(1.02); /* Augmenter à 1.05 */
+    }
+}
+
+.highlight-blue {
+    color: deepskyblue;
+}
+
+#button0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 7%;
+    color: white;
+    text-align: center;
+    font-family: Space Mono;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button0:hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10%;
+    height: 7%;
+    color: white;
+    text-align: center;
+    font-family: Space Mono;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#index1 {
+    font-family: Space Mono;
+    font-size: 13px;
+    top: 10px;
+    left: 50px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+#index2 {
+    font-family: Space Mono;
+    top: 200px;
+    left: 50px;
+    font-size: 50px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+#index3 {
+    font-family: Space Mono;
+    top: 400px;
+    left: 50px;
+    font-size: 17px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+#buttonIndex {
+    width: 120px;
+    height: 50px;
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Space Mono;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#buttonIndexContainer {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#buttonIndex:hover {
+    width: 120px;
+    height: 50px;
+    background: black;
+    color: white;
+    text-align: center;
+    font-family: Space Mono;
+    border: 2px solid white;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+#Vspaceship {
+    position: absolute;
+    top: 0px;
+    left: 3000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#kakaka {
+    top: 000px;
+    left: 3000px;
+    width: 100px;
+    height: 100px;
+    background-image: url(./images/kakakaD.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    position: absolute;
+}
+
+#button1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 463px;
+    height: 150px;
+    background: black;
+    opacity: 50%;
+    color: white;
+    font-family: Space Mono;
+    border-radius: 32px;
+    transition: font-size 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+    #button1:hover {
+        opacity: 85%;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+
+#Vspeed {
+    left: 6000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    
+}
+
+#trans1 {
+    position: absolute;
+    left: 6000px;
+    background: white;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#trans2 {
+    position: absolute;
+    left: 9000px;
+    background: white;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#spaceShip2 {
+    position: absolute;
+    left: 6000px;
+    background: url(../images/spaceshipbis.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#spaceShip3 {
+    position: absolute;
+    left: 9000px;
+    background: url(../images/spaceshipbis.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: visible;
+}
+
+
+#Vsaturne {
+    left: 9000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#button2 {
+    position: absolute;
+    width: 4%; /* Set the width of the button to 20% of #spaceShip3 */
+    height: 10%;
+    transform: translate(-50%, -50%);
+    left: 63%; /* Adjust the 50% value to position the button horizontally */
+    top: 80%; /* Adjust this value to position the button vertically */
+    
+}
+
+#VsaturneTrans {
+    left: 9000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceShipON {
+    position: absolute;
+    left: 9000px;
+    background: url(../images/spaceshipbis2.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#Vanneaux {
+    left: 9000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceShipRed {
+    position: absolute;
+    left: 9000px;
+    background: url(../images/spaceshipRed.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+
+#objectif {
+    position: absolute;
+    background-color: black;
+    border-radius: 8px;
+    opacity: 60%;
+    border: 1px solid white; /* Pour mieux visualiser */
+    visibility: hidden;
+    margin: 2%;
+    width: 330px;
+}
+
+#Tobjectif {
+    font-size: small;
+    color: white;
+    font-family: Space Mono;
+    line-height: 1.5;
+    width: max-content;
+    margin: 16px;
+    margin-top: 11px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+#objectifReduc {
+}
+
+#objectif2 {
+    position: absolute;
+    background-color: black;
+    border-radius: 8px;
+    opacity: 60%;
+    border: 1px solid white; /* Pour mieux visualiser */
+    visibility: visible;
+    margin: 2%;
+    width: 330px;
+}
+
+#Tobjectif2 {
+    font-size: small;
+    color: white;
+    font-family: Space Mono;
+    line-height: 1.5;
+    width: max-content;
+    margin: 16px;
+    margin-top: 11px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.taches-title {
+    font-size: 20px;
+}
+
+#button3 {
+    position: absolute;
+    width: 4%;
+    height: 10%;
+    transform: translate(-50%, -50%);
+    left: 63%; /* Adjust the 50% value to position the button horizontally */
+    top: 80%; /* Adjust this value to position the button vertically */
+    visibility: hidden;
+}
+
+#spaceShipOFFRed {
+    position: absolute;
+    left: 12000px;
+    background: url(../images/spaceshipbisRed.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceShip4 {
+    position: absolute;
+    left: 9000px;
+    background: url(../images/spaceshipbis.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+
+
+#saturneFinal {
+    position: absolute;
+    left: 9000px;
+    background: url(../images/saturneFinal.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#left {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(../images/left.png) no-repeat center center / cover;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(../images/right.png) no-repeat center center / cover;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+
+#front {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(../images/front.png) no-repeat center center / cover;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#back {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url(../images/back.png) no-repeat center center / cover;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 1002;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+#spaceshipMiddleG {
+    position: absolute;
+    left: 50px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleG.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleGRed {
+    position: absolute;
+    left: 50px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleGRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleD {
+    position: absolute;
+    left: 6000px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleD.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleDRed {
+    position: absolute;
+    left: 6000px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleDRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleB {
+    position: absolute;
+    left: 3000px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleB.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleBRed {
+    position: absolute;
+    left: 3000px;
+    top: 3000px;
+    background: url(../images/spaceshipMiddleBRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMiddleOpen {
+    position: absolute;
+    left: 12000px;
+    top: 0px;
+    background: url(../images/spaceshipMiddleOpen.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#spaceshipMiddleOpenRed {
+    position: absolute;
+    left: 12000px;
+    top: 0px;
+    background: url(../images/spaceshipMiddleOpenRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+#button7, #buttonCenter {
+    position: absolute;
+    width: 25%;
+    height: 60%;
+    transform: translate(-50%, -50%);
+    left: 50%; /* Adjust the 50% value to position the button horizontally */
+    top: 50%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#spaceshipCoridor {
+    position: absolute;
+    left: 9000px;
+    top: 3000px;
+    background: url(../images/spaceshipCoridor.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipCoridorRed {
+    position: absolute;
+    left: 9000px;
+    top: 3000px;
+    background: url(../images/spaceshipCoridorRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBed {
+    position: absolute;
+    left: 50px;
+    top: 6000px;
+    background: url(../images/spaceshipBed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedRed {
+    position: absolute;
+    left: 50px;
+    top: 6000px;
+    background: url(../images/spaceshipBedRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedInt {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedInt.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRed {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMaintenance {
+    position: absolute;
+    left: 6000px;
+    top: 6000px;
+    background: url(../images/spaceshipMaintenance.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMaintenanceRed {
+    position: absolute;
+    left: 6000px;
+    top: 6000px;
+    background: url(../images/spaceshipMaintenanceRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMaintenanceInt {
+    position: absolute;
+    left: 9000px;
+    top: 6000px;
+    background: url(../images/spaceshipMaintenanceInt.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipMaintenanceIntRed {
+    position: absolute;
+    left: 9000px;
+    top: 6000px;
+    background: url(../images/spaceshipMaintenanceIntRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipCoridor2 {
+    position: absolute;
+    left: 50px;
+    top: 9000px;
+    background: url(../images/spaceshipCoridor2.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipCoridor2Red {
+    position: absolute;
+    left: 50px;
+    top: 9000px;
+    background: url(../images/spaceshipCoridor2Red.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipEngine {
+    position: absolute;
+    left: 3000px;
+    top: 9000px;
+    background: url(../images/spaceshipEngine.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipEngineRed {
+    position: absolute;
+    left: 3000px;
+    top: 9000px;
+    background: url(../images/spaceshipEngineRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipEngineInt2 {
+    position: absolute;
+    left: 12000px;
+    top: 000px;
+    background: url(../images/spaceshipEngineInt2.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipEngineInt {
+    position: absolute;
+    left: 6000px;
+    top: 9000px;
+    background: url(../images/spaceshipEngineInt.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipEngineIntRed {
+    position: absolute;
+    left: 6000px;
+    top: 9000px;
+    background: url(../images/spaceshipEngineIntRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipTp {
+    position: absolute;
+    left: 9000px;
+    top: 9000px;
+    background: url(../images/spaceshipTp.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipTpRed {
+    position: absolute;
+    left: 9000px;
+    top: 9000px;
+    background: url(../images/spaceshipTpRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipHold {
+    position: absolute;
+    left: 50px;
+    top: 12000px;
+    background: url(../images/spaceshipHold.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipHoldRed {
+    position: absolute;
+    left: 50px;
+    top: 12000px;
+    background: url(../images/spaceshipHoldRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipHoldInt {
+    position: absolute;
+    left: 3000px;
+    top: 12000px;
+    background: url(../images/spaceshipHoldInt.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipHoldIntRed {
+    position: absolute;
+    left: 3000px;
+    top: 12000px;
+    background: url(../images/spaceshipHoldIntRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipWeapon{
+    position: absolute;
+    left: 6000px;
+    top: 12000px;
+    background: url(../images/spaceshipWeapon.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipWeaponRed {
+    position: absolute;
+    left: 6000px;
+    top: 12000px;
+    background: url(../images/spaceshipWeaponRed.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#buttonTp {
+    position: absolute;
+    width: 7%;
+    height: 14%;
+    transform: translate(-50%, -50%);
+    left: 53%; /* Adjust the 50% value to position the button horizontally */
+    top: 24%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#buttonAlarm {
+    position: absolute;
+    width: 9%;
+    height: 26%;
+    transform: translate(-50%, -50%);
+    left: 80%; /* Adjust the 50% value to position the button horizontally */
+    top: 51%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#spaceshipMaintenanceIntLever {
+    position: absolute;
+    left: 9000px;
+    top: 6000px;
+    background: url(../images/spaceshipMaintenanceIntLever.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+
+
+
+
+
+
+
+#button5right, #button6right, #button55right, #button4right, #button8right, #button13right {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 85%; /* Adjust the 50% value to position the button horizontally */
+    top: 50%; 
+    visibility: hidden;
+}
+
+#button6left, #button55left, #button5left, #button4left, #button8left, #button13left {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 15%; /* Adjust the 50% value to position the button horizontally */
+    top: 50%; 
+    visibility: hidden;
+}
+
+#button8front, #button9front, #button11front, #button13front, #button14front, #button18front {
+    position: absolute;
+    width: 30%;
+    height: 40%;
+    transform: translate(-50%, -50%);
+    left: 50%; /* Adjust the 50% value to position the button horizontally */
+    top: 55%; 
+    visibility: hidden;
+}
+
+#button8back, #button9back, #button10back, #button11back, #button12back, #button13back, #button14back, #button15back, #button16back, #button18back,
+#button19back, #buttonTpback, #button20back, #button21back, #button22back {
+    position: absolute;
+    width: 40%;
+    height: 25%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 87.5%;
+    visibility: hidden;
+}
+
+#button22back {
+    position: absolute;
+    visibility: hidden;
+}
+
+#buttonTpback {
+    position: absolute;
+    width: 40%;
+    height: 25%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 87.5%;
+    visibility: hidden;
+    z-index: 200;
+}
+
+
+#buttonFuse, #buttonFuse3 {
+    position: absolute;
+    width: 7%;
+    height: 14%;
+    transform: translate(-50%, -50%);
+    left: 86%; /* Adjust the 50% value to position the button horizontally */
+    top: 47%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#button20back {
+    position: absolute;
+    width: 40%;
+    height: 25%;
+    transform: translate(-50%, -50%);
+    left: 12000;
+    top: 0;
+    visibility: hidden;
+}
+
+#buttonFuse1 {
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    transform: translate(-50%, -50%);
+    left: 31%; /* Adjust the 50% value to position the button horizontally */
+    top: 34%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#buttonCase {
+    position: absolute;
+    width: 12%;
+    height: 14%;
+    transform: translate(-50%, -50%);
+    left: 77%; /* Adjust the 50% value to position the button horizontally */
+    top: 72%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#spaceshipHoldIntClose {
+    position: absolute;
+    left: 9000px;
+    top: 12000px;
+    background: url(../images/spaceshipHoldIntClose.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipHoldIntOpen {
+    position: absolute;
+    left: 12000px;
+    top: 000px;
+    background: url(../images/spaceshipHoldIntOpen.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#buttonCase2 {
+    position: absolute;
+    width: 38%;
+    height: 51%;
+    transform: translate(-50%, -50%);
+    left: 53%; /* Adjust the 50% value to position the button horizontally */
+    top: 55%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#buttonFuse2 {
+    position: absolute;
+    width: 13%;
+    height: 20%;
+    transform: translate(-50%, -50%);
+    left: 53%; /* Adjust the 50% value to position the button horizontally */
+    top: 56%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+#spaceshipBedIntRobot {
+    position: absolute;
+    left: 12000px;
+    top: 000px;
+    background: url(../images/spaceshipBedIntRobot.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot2 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot2.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot3 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot4.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#buttonKakaka {
+    position: absolute;
+    width: 7%;
+    height: 13%;
+    transform: translate(-50%, -50%);
+    left: 15%;
+    top: 43%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#buttonRobot {
+    position: absolute;
+    width: 7%;
+    height: 28%;
+    transform: translate(-50%, -50%);
+    left: 54%;
+    top: 76%;
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+#spaceshipBedIntRobot4 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot5.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot5 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot6.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot6 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot8.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot7 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot9.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot8 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot10.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#spaceshipBedIntRobot9 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/spaceshipBedIntRobot11.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+}
+
+#trans3 {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: white;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#blood {
+    position: absolute;
+    left: 3000px;
+    top: 6000px;
+    background: url(../images/blood.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+#cockpit {
+    position: absolute;
+    background: url(../images/cockpit.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+    z-index: 2;
+}
+
+#laser, #laser1, #laser2 {
+    position: absolute;
+    width: 5px; /* Épaisseur du laser */
+    height: 100vh; /* Hauteur du laser pour qu'il s'étende sur toute la page */
+    background: red; /* Couleur ou image du laser */
+    transform-origin: top center; /* Point d'origine pour la rotation */
+    visibility: hidden; /* Masqué par défaut */
+    pointer-events: none; /* Ignore les événements de souris */
+    z-index: 1;
+}
+
+#target {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url(../images/target.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+    opacity: 0.5;
+    visibility: hidden;
+    z-index: 200;
+}
+
+#buttonTarget {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 25%;
+    pointer-events: auto;
+    z-index: 3;
+}
+
+.spaceship {
+    position: absolute;
+    pointer-events: auto;
+    width: 5%;
+    height: 5%;
+    background-size: contain;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform-origin: center center;
+}
+
+@keyframes growAnimation {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(2.0);
+    }
+}
+
+.grow {
+    animation: growAnimation 20s forwards; /* L'animation durera 20 secondes et se terminera dans cette position */
+}
+
+#cockpit2 {
+    position: absolute;
+    background: url(../images/cockpit2.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+    z-index: 2;
+}
+
+#shield {
+    position: absolute;
+    background: url(../images/shield.jpg) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    visibility: hidden;
+    z-index: 0;
+}
+
+#spaceshipX {
+    position: absolute;
+    left: 12000px;
+    top: 0px;
+    background: url(../images/spaceshipbis.png) no-repeat center center / cover;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#buttonX {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 463px;
+    height: 150px;
+    background: black;
+    opacity: 50%;
+    color: white;
+    font-family: Space Mono;
+    border-radius: 32px;
+    transition: font-size 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+    #buttonX:hover {
+        opacity: 85%;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+
+#Vspeed2, #Vearth {
+    left: 0px;
+    top: 15000px;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#black2 {
+    font-family: Space Mono;
+    left: 3000px;
+    top: 15000px;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+    opacity: 0;
+}
+
+#end {
+    font-family: Space Mono;
+    font-size: 40px;
+    top: 15%;
+    left: 15%;
+    width: 70vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    text-align: center;
+}
+
+#text {
+    font-family: Space Mono;
+    font-size: 15px;
+    top: 33%;
+    left: 12.5%;
+    width: 75vw;
+    height: 100vh;
+    object-fit: cover;
+    color: white;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#recover {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 13%;
+    height: 7%;
+    color: white;
+    text-align: center;
+    font-family: Space Mono;
+    font-size: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #recover:hover {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 13%;
+        height: 7%;
+        color: white;
+        text-align: center;
+        font-family: Space Mono;
+        font-size: 20px;
+        border: 2px solid white;
+        border-radius: 8px;
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+#trans4 {
+    position: absolute;
+    left: 12000px;
+    top: 0px;
+    background: white;
+    opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/* background: white;
+opacity: 20%; */
+
+
+
+
+
+
+
